@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using AppointmentManager.Core.Interfaces;
 using AppointmentManager.Infrastructure.Services;
@@ -15,7 +14,7 @@ namespace AppointmentManager.UnitTests.Infrastructure
         {
             var service = new StaffService();
 
-            var staffMembers = service.GetStaffMembers();
+            List<IStaff> staffMembers = service.GetStaffMembers();
 
             Assert.IsNotNull(staffMembers);
             Assert.IsTrue(staffMembers.Any());

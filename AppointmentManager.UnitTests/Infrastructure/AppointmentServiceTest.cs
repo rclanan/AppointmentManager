@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AppointmentManager.Core.Interfaces;
 using AppointmentManager.Infrastructure.Services;
@@ -26,7 +27,7 @@ namespace AppointmentManager.UnitTests.Infrastructure
 
             DateTime appointmentDate = DateTime.ParseExact("2012-01-03", "yyyy-MM-dd", null);
 
-            var appointments = service.GetAppointments(_staff, appointmentDate);
+            List<IAppointment> appointments = service.GetAppointments(_staff, appointmentDate);
 
             Assert.IsNotNull(appointments);
             Assert.IsTrue(appointments.Any());

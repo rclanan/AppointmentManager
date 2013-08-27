@@ -42,15 +42,15 @@ function homeIndexController($scope, $http) {
                 $scope.isBusy = true;
 
                 $http.get("/api/v1/staffmembers/" + newValue + "/appointments/2012-01-03")
-                    .then(function (result) {
+                    .then(function(result) {
                         // Successful
-                        
+
                         angular.copy(result.data, $scope.appointments);
                     },
-                        function () {
+                        function() {
                             // Error
                             alert("could not load staff appointments");
-                        }).then(function () {
+                        }).then(function() {
                             $scope.isBusy = false;
                         });
                 return;
